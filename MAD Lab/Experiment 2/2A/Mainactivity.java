@@ -1,7 +1,4 @@
-package com.example.experiment2a;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
+package com.example.application2;
 
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +9,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import static com.example.application2.R.id;
+import static com.example.application2.R.layout;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,10 +34,11 @@ public class MainActivity extends AppCompatActivity {
     RadioButton radioSexButton;
     DatePicker dob;
     Spinner sp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_main);
         tv1 = findViewById(R.id.TextView7);
         tv2 = findViewById(R.id.TextView9);
         tv3 = findViewById(R.id.TextView10);
@@ -42,16 +46,16 @@ public class MainActivity extends AppCompatActivity {
         tv5 = findViewById(R.id.TextView11);
         tv6 = findViewById(R.id.TextView12);
         tv7 = findViewById(R.id.TextView14);
-        b = findViewById(R.id.button1);
-        et1 = findViewById(R.id.EditText1);
-        et2 = findViewById(R.id.EditText2);
-        et3 = findViewById(R.id.EditText3);
-        et4 = findViewById(R.id.EditText4);
-        dob = findViewById(R.id.datepicker);
-        sp =(Spinner)findViewById(R.id.spinner);
+        b = findViewById(id.button1);
+        et1 = findViewById(id.EditText1);
+        et2 = findViewById(id.EditText2);
+        et3 = findViewById(id.EditText3);
+        et4 = findViewById(id.EditText4);
+        dob = findViewById(id.datepicker);
+        sp =(Spinner)findViewById(id.spinner);
         TextView details;
-        details = findViewById(R.id.details);
-        details.setText("Check your Details here");
+        details = findViewById(id.details);
+        details.setText("Your Details are:");
         b.setOnClickListener(new View.OnClickListener() {
             @NonNull
             @Override
@@ -79,8 +83,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+
     public void onRadioButtonClicked() {
-        radioSexGroup = findViewById(R.id.radioGrp);
+        radioSexGroup = findViewById(id.radioGrp);
         int selectedId = radioSexGroup.getCheckedRadioButtonId();
         radioSexButton = (RadioButton) findViewById(selectedId);
         String st4 = radioSexButton.getText().toString();
